@@ -10,31 +10,31 @@ const connection_db = async () => {
     });
     console.log("MongoDB connected successfully");
 
-    // const db = mongoose.connection.db;
-    // const collection = db.collection("food_items");
-    // const cursor = await collection.find({});
-    // const arr = new Array();
-    // await cursor.forEach((document) => {
-    //   arr.push(document);
-    // });
-    // global.food_items = arr;
-
-    // const foodCategoryCollection = await db.collection("food_category");
-    // const foodCategory = await foodCategoryCollection.find({});
-    // const arr2 = new Array();
-    // await foodCategory.forEach((document) => {
-    //   arr2.push(document);
-    // });
-    // global.food_category = arr2;
-
     const db = mongoose.connection.db;
     const collection = db.collection("food_items");
-    const foodItems = await collection.find({}).toArray();
-    global.food_items = foodItems;
+    const cursor = await collection.find({});
+    const arr = new Array();
+    await cursor.forEach((document) => {
+      arr.push(document);
+    });
+    global.food_items = arr;
 
-    const foodCategoryCollection = db.collection("food_category");
-    const foodCategory = await foodCategoryCollection.find({}).toArray();
-    global.food_category = foodCategory;
+    const foodCategoryCollection = await db.collection("food_category");
+    const foodCategory = await foodCategoryCollection.find({});
+    const arr2 = new Array();
+    await foodCategory.forEach((document) => {
+      arr2.push(document);
+    });
+    global.food_category = arr2;
+
+    // const db = mongoose.connection.db;
+    // const collection = db.collection("food_items");
+    // const foodItems = await collection.find({}).toArray();
+    // global.food_items = foodItems;
+
+    // const foodCategoryCollection = db.collection("food_category");
+    // const foodCategory = await foodCategoryCollection.find({}).toArray();
+    // global.food_category = foodCategory;
     // console.log(global.food_items)
   } catch (error) {
     console.error("MongoDB connection error:", error);
