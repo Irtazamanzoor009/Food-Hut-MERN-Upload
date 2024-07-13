@@ -14,25 +14,21 @@ const Products = () => {
   }, []);
 
   const LoadData = async (data) => {
-    const response = await fetch(
-      "https://food-hut-mern-upload-backend.vercel.app/food/fooditems",
-      {
-        method: "POST",
-        body: JSON.stringify(data),
-        headers: { "Content-Type": "application/json" },
-      }
-    );
-    const json = await response.json();
-    try
-    {
+    try {
+      const response = await fetch(
+        "https://food-hut-mern-upload-backend.vercel.app/food/fooditems",
+        {
+          method: "POST",
+          body: JSON.stringify(data),
+          headers: { "Content-Type": "application/json" },
+        }
+      );
+      const json = await response.json();
       setfoodItem(json[0]);
       setfoodCategory(json[1]);
-
-    }
-    catch(error)
-    {
-      setfoodItem([]),
-      setfoodCategory([])
+    } catch (error) {
+      setfoodItem([]);
+      setfoodCategory([]);
       consol.log(error);
     }
   };
