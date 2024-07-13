@@ -9,8 +9,10 @@ const app = express()
 const port = 3002
 
 const corsOptions = {
-  origin: ['http://localhost:3002', 'https://food-hut-mern.vercel.app'], // Replace with your Vercel domain
+  origin: ['http://localhost:3002', 'https://food-hut-mern.vercel.app'],
   optionsSuccessStatus: 200,
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
 };
 app.use(cors(corsOptions))
 
