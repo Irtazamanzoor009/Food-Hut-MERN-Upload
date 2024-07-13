@@ -33,8 +33,6 @@ const Products = () => {
     {
       setfoodItem([]),
       setfoodCategory([])
-      console.log(json[1])
-      console.log(json[0])
       consol.log(error);
     }
   };

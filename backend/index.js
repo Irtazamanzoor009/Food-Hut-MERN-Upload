@@ -8,12 +8,12 @@ connection_db();
 const app = express()
 const port = 3001
 
-// app.use(cors({
-//   origin: ["https://"],
-//   methods:["POST","GET","DELETE"],
-//   credentials:true
-// }));
-app.use(cors())
+const corsOptions = {
+  origin: 'https://food-hut-mern-upload-backend.vercel.app/', // Replace with your Vercel domain
+  optionsSuccessStatus: 200,
+};
+
+app.use(cors(corsOptions))
 app.use(express.json());
 
 app.get('/', (req, res) => {
