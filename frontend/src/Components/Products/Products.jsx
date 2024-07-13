@@ -26,7 +26,8 @@ const Products = () => {
 
   return (
     <div className="main-products">
-      {foodCategory.length > 0 &&
+      {
+      // {foodCategory.length > 0 &&
         foodCategory.map((Cat) => {
           return (
             <div key={Cat.id}>
@@ -34,7 +35,8 @@ const Products = () => {
               <hr className="mainline" />
               <div className="container">
                 <div className="row">
-                  {foodItem.length > 0 &&
+                  {
+                  // {foodItem.length > 0 &&
                     foodItem
                       .filter(
                         (item) =>
