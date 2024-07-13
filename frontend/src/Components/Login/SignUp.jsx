@@ -16,7 +16,7 @@ const SignUp = () => {
   } = useForm();
 
   const onsubmit = async (data) => {
-    await fetch("http://localhost:3001/signup/createuser", {
+    await fetch("https://food-hut-mern-upload-backend.vercel.app/signup/createuser", {
       method: "POST",
       body: JSON.stringify(data),
       headers: { "Content-Type": "application/json" },

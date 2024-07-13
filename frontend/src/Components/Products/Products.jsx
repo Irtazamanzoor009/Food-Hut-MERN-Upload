@@ -14,7 +14,7 @@ const Products = () => {
   }, []);
 
   const LoadData = async (data) => {
-    const response = await fetch("http://localhost:3001/food/fooditems", {
+    const response = await fetch("https://food-hut-mern-upload-backend.vercel.app/food/fooditems", {
       method: "POST",
       body: JSON.stringify(data),
       headers: { "Content-Type": "application/json" },

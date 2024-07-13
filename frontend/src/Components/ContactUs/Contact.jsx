@@ -16,7 +16,7 @@ const Contact = () => {
   } = useForm();
 
   const onsubmit = async (data) => {
-    await fetch("http://localhost:3001/contact/contactus", {
+    await fetch("https://food-hut-mern-upload-backend.vercel.app/contact/contactus", {
       method: "POST",
       body: JSON.stringify(data),
       headers: { "Content-Type": "application/json" },
