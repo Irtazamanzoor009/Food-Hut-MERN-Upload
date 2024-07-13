@@ -9,7 +9,7 @@ const app = express()
 const port = 3002
 
 const corsOptions = {
-  origin: ['http://localhost:3002', 'https://food-hut-mern.vercel.app'],
+  origin: ['http://localhost:3002', 'https://food-hut-chi.vercel.app/'],
   optionsSuccessStatus: 200,
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization'],
@@ -17,7 +17,7 @@ const corsOptions = {
 app.use(cors(corsOptions))
 
 app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "https://food-hut-mern.vercel.app"); // Update to match the domain you will make the request from
+  res.header("Access-Control-Allow-Origin", "https://food-hut-chi.vercel.app/"); // Update to match the domain you will make the request from
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
   next();
