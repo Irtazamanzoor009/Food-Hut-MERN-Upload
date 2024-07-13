@@ -29,7 +29,7 @@ const Products = () => {
     } catch (error) {
       setfoodItem([]);
       setfoodCategory([]);
-      consol.log(error);
+      consol.log("Error is: ",error);
     }
   };
 
