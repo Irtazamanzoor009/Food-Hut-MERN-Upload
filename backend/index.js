@@ -55,8 +55,8 @@ app.use('/contact', require("./routes/contact"), (req,res)=>{
 })
 
 app.post('/test', (req, res) => {
+  console.log('POST request received at /test');
   res.send('POST request to /test successful');
-  res.json({success:false})
 });
 
 app.listen(port, () => {
