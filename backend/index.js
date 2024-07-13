@@ -14,7 +14,7 @@ const corsOptions = {
   // methods: ['GET', 'POST', 'PUT', 'DELETE'],
   // allowedHeaders: ['Content-Type', 'Authorization'],
 };
-app.use(cors(corsOptions))
+// app.use(cors(corsOptions))
 
 // app.use((req, res, next) => {
 //   res.header("Access-Control-Allow-Origin", "https://food-hut-chi.vercel.app/"); // Update to match the domain you will make the request from
