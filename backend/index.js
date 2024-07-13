@@ -54,6 +54,10 @@ app.use('/contact', require("./routes/contact"), (req,res)=>{
   console.log("Order data failed")
 })
 
+app.post('/test', (req, res) => {
+  res.send('POST request to /test successful');
+  res.json({success:false})
+});
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
