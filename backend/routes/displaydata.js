@@ -4,9 +4,10 @@ const router = express.Router();
 router.post("/fooditems", (req, res) => {
   try {
     res.send([global.food_items, global.food_category])
+    res.send("Data Fetched or not")
   } catch (error) {
     console.log(error);
-    res.send("Server Error")
+    res.status(500).send("Server Error");
   }
 });
 
