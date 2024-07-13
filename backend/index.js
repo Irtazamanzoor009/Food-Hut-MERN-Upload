@@ -9,11 +9,11 @@ const app = express()
 const port = 3001
 
 const corsOptions = {
-  origin: 'https://food-hut-mern-upload-backend.vercel.app/', // Replace with your Vercel domain
+  origin: 'https://food-hut-mern.vercel.app/', // Replace with your Vercel domain
   optionsSuccessStatus: 200,
 };
 
-app.use(cors())
+app.use(cors(corsOptions))
 app.use(express.json());
 
 app.get('/', (req, res) => {
