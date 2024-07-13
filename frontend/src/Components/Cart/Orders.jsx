@@ -49,7 +49,7 @@ const Cart = () => {
 
   const handleClearAllRecords = async () => {
     const response = await fetch(
-      `http://localhost:3001/orderdata/clearallrecords`,
+      `https://food-hut-mern-upload-backend.vercel.app/orderdata/clearallrecords`,
       {
         method: "DELETE",
         body: JSON.stringify({ email: UserEmail }),
