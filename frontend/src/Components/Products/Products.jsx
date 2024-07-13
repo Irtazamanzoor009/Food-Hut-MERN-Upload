@@ -31,10 +31,10 @@ const Products = () => {
     }
     catch(error)
     {
-      console.log(json[0])
-      console.log(json[1])
       setfoodItem([]),
       setfoodCategory([])
+      console.log(json[1])
+      console.log(json[0])
       consol.log(error);
     }
   };
