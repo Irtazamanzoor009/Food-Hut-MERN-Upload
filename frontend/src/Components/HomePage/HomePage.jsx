@@ -8,7 +8,7 @@ const HomePage = () => {
     <div>
         <Navbar/>
         <Slider/>
-        <Products/>
+        {/* <Products/> */}
     </div>  
   )
 }
