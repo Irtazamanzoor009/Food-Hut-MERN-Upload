@@ -187,13 +187,13 @@
   }
 
   .quantity input[type="text"] {
-    width: 30px;
+    width: 35px;
     height: 30px;
     margin: 2px 3px;
   }
 
   .quantity button {
-    width: 25px;
+    width: 30px;
     height: 30px;
     
   }
@@ -207,7 +207,7 @@
   .row {
     grid-template-columns: repeat(2, 1fr);
     grid-row-gap: 40px;
-    grid-column-gap: 10px;
+    grid-column-gap: 5px;
   }
   .cards {
     width: 400px;
@@ -231,13 +231,13 @@
   }
 
   .quantity input[type="text"] {
-    width: 30px;
+    width: 35px;
     height: 30px;
     margin: 2px 3px;
   }
 
   .quantity button {
-    width: 25px;
+    width: 30px;
     height: 30px;
     
   }
@@ -247,7 +247,7 @@
   .row {
     grid-template-columns: repeat(1, 1fr);
     grid-row-gap: 20px;
-    grid-column-gap: 20px;
+    grid-column-gap: 5px;
   }
   .cards {
     width: 400px;
