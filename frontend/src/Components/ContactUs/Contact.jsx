@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form";
 
 const Contact = () => {
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
 
   const {
     register,
@@ -124,7 +124,7 @@ const Contact = () => {
                 })}
               ></textarea>
               <button type="submit" class="btn">
-                 Send 1
+                 Send Message
                  {isLoading && <i className="fa-solid fa-spinner fa-spin"></i>}
               </button>
             </form>
