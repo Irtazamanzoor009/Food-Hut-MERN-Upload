@@ -131,7 +131,7 @@
     background-color:#86f189;
 }
 
-@media(max-width:410px)
+/* @media(max-width:410px)
 {
     .signup
     {
@@ -144,9 +144,9 @@
         text-align: center;
         justify-content: center;
     }
-}
+} */
 
-@media(max-width:400px)
+@media(max-width:501px)
 {
     .signup
     {
