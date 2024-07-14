@@ -19,7 +19,14 @@ const Cart = () => {
   };
 
   const handleClearCart = () => {
-    dispatch(clearCart());
+    if (cart.length > 0) {
+      dispatch(clearCart());
+      alert("Your Cart has been Cleared");
+    }
+    else
+    {
+      alert("There is no item in the Cart")
+    }
   };
 
   useEffect(() => {
@@ -48,13 +55,11 @@ const Cart = () => {
       console.log("Response Status: ", response);
       if (response.status == 200) {
         dispatch(clearCart());
-        alert("Your Order has been checked out")
+        alert("Your Order has been checked out");
       }
+    } else {
+      alert("There is no item in the cart");
     }
-    else
-  {
-    alert("There is no item in the cart")
-  }
   };
 
   return (
