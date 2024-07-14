@@ -27,23 +27,28 @@ const Cart = () => {
     // console.log(userEmail)
     if (!userEmail) {
       navigate("/signin");
-    } 
+    }
   }, []);
 
   const handleCheckOut = async () => {
-    let userEmail = localStorage.getItem("UserEmail");
-    const response = await fetch("https://food-hut-mern-backend-git-master-irtazamanzoor009s-projects.vercel.app/orderdata/ordercart", {
-      method: "POST",
-      body: JSON.stringify({
-        email: userEmail,
-        order_data: cart,
-        order_date: new Date().toLocaleString(),
-      }),
-      headers: { "Content-Type": "application/json" },
-    });
-    console.log("Response Status: ", response);
-    if (response.status == 200) {
-      dispatch(clearCart());
+    if (cart) {
+      let userEmail = localStorage.getItem("UserEmail");
+      const response = await fetch(
+        "https://food-hut-mern-backend-git-master-irtazamanzoor009s-projects.vercel.app/orderdata/ordercart",
+        {
+          method: "POST",
+          body: JSON.stringify({
+            email: userEmail,
+            order_data: cart,
+            order_date: new Date().toLocaleString(),
+          }),
+          headers: { "Content-Type": "application/json" },
+        }
+      );
+      console.log("Response Status: ", response);
+      if (response.status == 200) {
+        dispatch(clearCart());
+      }
     }
   };
 
