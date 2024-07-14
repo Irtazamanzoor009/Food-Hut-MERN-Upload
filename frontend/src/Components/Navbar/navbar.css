@@ -144,6 +144,8 @@ nav {
   padding: 5px 7px;
   background-color: whitesmoke;
   border-radius: 5px;
+  border: none;
+  outline:none;
   
 }
 
