@@ -14,16 +14,17 @@ const corsOptions = {
   // methods: ['GET', 'POST', 'PUT', 'DELETE'],
   // allowedHeaders: ['Content-Type', 'Authorization'],
 };
-// app.use(cors(corsOptions))
 
 // app.use((req, res, next) => {
-//   res.header("Access-Control-Allow-Origin", "https://food-hut-chi.vercel.app/"); // Update to match the domain you will make the request from
-//   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-//   res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
-//   next();
-// });
-
-app.use(express.json());
+  //   res.header("Access-Control-Allow-Origin", "https://food-hut-chi.vercel.app/"); // Update to match the domain you will make the request from
+  //   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  //   res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+  //   next();
+  // });
+  
+  app.use(express.json());
+  app.use(cors())
+  
 app.get('/', (req, res) => {
   res.send('API is running');
 });
