@@ -31,7 +31,7 @@ const Cart = () => {
   }, []);
 
   const handleCheckOut = async () => {
-    if (cart) {
+    if (cart.length > 0) {
       let userEmail = localStorage.getItem("UserEmail");
       const response = await fetch(
         "https://food-hut-mern-backend-git-master-irtazamanzoor009s-projects.vercel.app/orderdata/ordercart",
@@ -48,8 +48,13 @@ const Cart = () => {
       console.log("Response Status: ", response);
       if (response.status == 200) {
         dispatch(clearCart());
+        alert("Your Order has been checked out")
       }
     }
+    else
+  {
+    alert("There is no item in the cart")
+  }
   };
 
   return (
