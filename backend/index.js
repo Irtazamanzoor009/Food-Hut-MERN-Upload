@@ -25,21 +25,22 @@ const corsOptions = {
 app.use(express.json());
 app.use(cors());
 
-app.get("/a",(req,res)=>{
-  res.send("irtaza")
-})
+// app.get("/a",(req,res)=>{
+//   res.send("irtaza")
+// })
 
-app.get("/", async(req, res) => {
-  try{
-    const item = await foodItem.find();
-    res.send("API is running", item);
-  }
-  catch(error)
-  { 
-    res.json({ success: false });
-    console.log("Error is: ", error)
-  }
-});
+// app.get("/", async(req, res) => {
+//   res.send("irtaza")
+//   try{
+//     const item = await foodItem.find();
+//     res.send("API is running", item);
+//   }
+//   catch(error)
+//   { 
+//     res.json({ success: false });
+//     console.log("Error is: ", error)
+//   }
+// });
 
 
 app.use("/signup", require("./routes/createuser"), (req, res) => {
