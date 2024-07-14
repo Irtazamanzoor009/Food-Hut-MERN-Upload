@@ -6,6 +6,7 @@ import { NavLink } from "react-router-dom";
 
 const SignUp = () => {
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const {
     register,
     handleSubmit,
@@ -16,12 +17,17 @@ const SignUp = () => {
   } = useForm();
 
   const onsubmit = async (data) => {
+    setIsLoading(true);
     await fetch("https://food-hut-mern-backend-git-master-irtazamanzoor009s-projects.vercel.app/signup/createuser", {
       method: "POST",
       body: JSON.stringify(data),
       headers: { "Content-Type": "application/json" },
     });
     console.log(data);
+
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 300);
 
     setShowSuccessMessage(true);
     setTimeout(() => {
@@ -94,6 +100,7 @@ const SignUp = () => {
               />
               <button disabled={showSuccessMessage} type="submit">
                 Sign Up
+                {isLoading && <i className="fa-solid fa-spinner fa-spin"></i>}
               </button>
             </form>
           </div>
