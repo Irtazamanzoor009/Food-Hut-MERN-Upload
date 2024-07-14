@@ -25,6 +25,10 @@ const corsOptions = {
 app.use(express.json());
 app.use(cors());
 
+app.get("/a",(req,res)=>{
+  res.send("irtaza")
+})
+
 app.get("/", async(req, res) => {
   try{
     const item = await foodItem.find();
