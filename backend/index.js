@@ -26,9 +26,9 @@ app.use(express.json());
 app.use(cors());
 
 app.get("/", async(req, res) => {
-  res.send("API is running");
   try{
     const item = await foodItem.find();
+    res.send("API is running");
     res.send(item);
   }
   catch(error)
