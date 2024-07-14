@@ -9,7 +9,7 @@ const app = express();
 const port = 3002;
 
 const corsOptions = {
-  origin: ["http://localhost:3002", "https://food-hut-chi.vercel.app"],
+  origin: ["http://localhost:3002", "https://food-hut-livid.vercel.app"],
   optionsSuccessStatus: 200,
   // methods: ['GET', 'POST', 'PUT', 'DELETE'],
   // allowedHeaders: ['Content-Type', 'Authorization'],
