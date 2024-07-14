@@ -131,6 +131,13 @@ nav {
   border-radius: 6px;
 }
 
+.check-cart button
+{
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
 .cart-btn i
 {
   font-size: 27px;
@@ -256,11 +263,6 @@ nav {
 }
 
 @media (max-width: 300px) {
-  
-  .cart-btn-mobile img {
-    height: 33px;
-    width: 33px;
-  }
   
   .res-buttons button {
     margin-left: 10px;
