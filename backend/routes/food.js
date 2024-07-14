@@ -7,7 +7,7 @@ const FoodCategory = require("../models/FoodCategory.js");
 router.get("/getfooditems",async(req,res)=>{
   try{
     const item = await foodItem.find();
-    res.json(item);
+    res.send(item);
   }
   catch(error)
   { 
