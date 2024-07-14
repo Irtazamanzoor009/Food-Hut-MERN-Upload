@@ -31,7 +31,7 @@ const Cart = () => {
 
   const OrderedData = async () => {
     const response = await fetch(
-      "https://food-hut-mern-upload-backend.vercel.app/orderdata/myordercart",
+      "https://food-hut-mern-backend-git-master-irtazamanzoor009s-projects.vercel.app/orderdata/myordercart",
       {
         method: "POST",
         body: JSON.stringify({ email: UserEmail }),
