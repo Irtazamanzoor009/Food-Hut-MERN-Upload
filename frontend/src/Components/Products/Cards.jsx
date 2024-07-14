@@ -15,7 +15,7 @@ const Cards = (props) => {
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(false);
 
-  const options = props.items.options[0];
+  const options = props.items.options[1];
   const priceOptions = Object.keys(options);
 
   const [qty, setqty] = useState(1);
