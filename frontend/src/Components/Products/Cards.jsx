@@ -15,7 +15,7 @@ const Cards = (props) => {
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(false);
 
-  const options = props.items.options[1];
+  const options = props.items.options[0];
   const priceOptions = Object.keys(options);
 
   const [qty, setqty] = useState(1);
@@ -97,7 +97,7 @@ const Cards = (props) => {
                 ref={sizeRef}
                 onChange={(e) => setsize(e.target.value)}
               >
-                {priceOptions.map((item) => {
+                {priceOptions.slice(1).map((item) => {
                   return (
                     <option value={item} key={item}>
                       {item}
