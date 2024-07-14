@@ -124,7 +124,7 @@ const Contact = () => {
                 })}
               ></textarea>
               <button type="submit" class="btn">
-                 Send
+                 Send 1
                  {isLoading && <i className="fa-solid fa-spinner fa-spin"></i>}
               </button>
             </form>
