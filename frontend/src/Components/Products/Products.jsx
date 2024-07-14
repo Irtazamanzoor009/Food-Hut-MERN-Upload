@@ -24,8 +24,8 @@ const Products = () => {
         }
       );
       const json = await response.json();
-      setfoodItem(json[0]);
       setfoodCategory(json[1]);
+      setfoodItem(json[0]);
     } catch (error) {
       setfoodItem([]);
       setfoodCategory([]);
