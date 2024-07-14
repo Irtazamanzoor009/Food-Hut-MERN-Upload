@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form";
 
 const Contact = () => {
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   const {
     register,
