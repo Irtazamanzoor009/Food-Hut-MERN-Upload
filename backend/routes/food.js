@@ -32,7 +32,7 @@ router.get("/getfood",async(req,res)=>{
   try{
     const item = await foodItem.find();
     const cat = await FoodCategory.find();
-    res.json([item,cat]);
+    res.send([item,cat]);
   }
   catch(error)
   { 

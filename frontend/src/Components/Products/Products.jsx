@@ -18,7 +18,7 @@ const Products = () => {
       const response = await fetch(
         "https://food-hut-mern-backend-git-master-irtazamanzoor009s-projects.vercel.app/getfood/getfood",        
         {
-          method: "POST",
+          method: "GET",
           body: JSON.stringify(data),
           headers: { "Content-Type": "application/json" },
         }
