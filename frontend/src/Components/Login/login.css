@@ -139,11 +139,11 @@
     }
 }
 
-@media(max-width:330px)
+@media(max-width:390px)
 {
     .signup
     {
-        width: 250px;
+        width: 300px;
     }
     .signupForm input::placeholder
     {
@@ -153,7 +153,9 @@
     .signupForm .form button
     {
         font-size: 15px;
+        display: flex;
         text-align: center;
+        justify-content: center;
     }
 
     .signup p
