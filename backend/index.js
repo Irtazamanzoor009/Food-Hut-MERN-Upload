@@ -23,6 +23,11 @@ const corsOptions = {
 //   next();
 // });
 
+app.get('/', (req, res) => {
+  res.send('API is running');
+});
+
+
 app.use(express.json());
 app.use(bodyParser.json());
 
