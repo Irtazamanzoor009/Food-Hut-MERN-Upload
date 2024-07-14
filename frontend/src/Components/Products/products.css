@@ -250,9 +250,9 @@
     grid-column-gap: 20px;
   }
   .cards {
-    width: 380px;
+    width: 400px;
     height: 90%;
-    background-color: red;
+    /* background-color: red; */
   }
   .cards .image {
     width: 100%;
