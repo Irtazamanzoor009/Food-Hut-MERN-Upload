@@ -6,7 +6,7 @@ import { NavLink } from "react-router-dom";
 
 const SignUp = () => {
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
   const {
     register,
     handleSubmit,
@@ -18,11 +18,14 @@ const SignUp = () => {
 
   const onsubmit = async (data) => {
     setIsLoading(true);
-    await fetch("https://food-hut-mern-backend-git-master-irtazamanzoor009s-projects.vercel.app/signup/createuser", {
-      method: "POST",
-      body: JSON.stringify(data),
-      headers: { "Content-Type": "application/json" },
-    });
+    await fetch(
+      "https://food-hut-mern-backend-git-master-irtazamanzoor009s-projects.vercel.app/signup/createuser",
+      {
+        method: "POST",
+        body: JSON.stringify(data),
+        headers: { "Content-Type": "application/json" },
+      }
+    );
     console.log(data);
 
     setTimeout(() => {
@@ -56,17 +59,22 @@ const SignUp = () => {
             {errors.email && (
               <div className="red msgs">{errors.email.message}</div>
             )}
+            {errors.location && (
+              <div className="red msgs">{errors.location.message}</div>
+            )}
             <form className="form" action="" onSubmit={handleSubmit(onsubmit)}>
               <input
                 type="email"
                 placeholder="Enter Email"
-                {...register("email", { required: true })}
+                {...register("email", {
+                  required: { value: true, message: "Please Enter Email" },
+                })}
               />
               <input
                 type="password"
                 placeholder="Enter Password"
                 {...register("password", {
-                  required: true,
+                  required: { value: true, message: "Please Enter Password" },
                   minLength: {
                     value: 3,
                     message: "Length of password must be greater then 3",
@@ -81,7 +89,7 @@ const SignUp = () => {
                 type="text"
                 placeholder="Enter Username"
                 {...register("username", {
-                  required: true,
+                  required: { value: true, message: "Please Enter UserName" },
                   minLength: {
                     value: 3,
                     message: "Length of usename must be 3",
@@ -96,7 +104,9 @@ const SignUp = () => {
               <input
                 type="text"
                 placeholder="Enter Location"
-                {...register("location", { required: true })}
+                {...register("location", {
+                  required: { value: true, message: "Please Enter Location" },
+                })}
               />
               <button disabled={showSuccessMessage} type="submit">
                 Sign Up
