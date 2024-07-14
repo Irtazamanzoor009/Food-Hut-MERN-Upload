@@ -59,6 +59,12 @@ app.post('/test', (req, res) => {
   res.send('POST request to /test successful');
 });
 
+// ----------------------------------------------------------
+//  router for food items and category
+app.use('/getfood',require("./routes/food"), (req,res)=>{
+  console.log("get food failed")
+})
+
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })

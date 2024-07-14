@@ -19,6 +19,18 @@ router.post("/contactus", async (req, res) => {
   }
 });
 
+router.get("/getcontact",async(req,res)=>{
+  try{
+    const getcontact = await contact.find();
+    res.json(getcontact);
+  }
+  catch(error)
+  { 
+    res.json({ success: false });
+    console.log("Error is: ", error)
+  }
+})
+
 
 
 module.exports = router;
