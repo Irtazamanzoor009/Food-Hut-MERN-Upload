@@ -7,6 +7,7 @@ import { NavLink } from "react-router-dom";
 const SignUp = () => {
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [serverError, setServerError] = useState("");
   const {
     register,
     handleSubmit,
@@ -18,25 +19,47 @@ const SignUp = () => {
 
   const onsubmit = async (data) => {
     setIsLoading(true);
-    await fetch(
-      "https://food-hut-mern-backend-git-master-irtazamanzoor009s-projects.vercel.app/signup/createuser",
-      {
-        method: "POST",
-        body: JSON.stringify(data),
+    setServerError("");
+    try
+    {
+      const response = await fetch(
+        "https://food-hut-mern-backend-git-master-irtazamanzoor009s-projects.vercel.app/signup/createuser",
+        {
+          method: "POST",
+          body: JSON.stringify(data),
         headers: { "Content-Type": "application/json" },
       }
     );
-    console.log(data);
+    // console.log(data);
+    const result = await response.json();
+
+    if (!result.success) {
+      if (result.error === "Email already exists") {
+        setServerError("Email already exists");
+      } else {
+        setServerError("An error occurred. Please try again.");
+      }
+      setIsLoading(false);
+      setTimeout(()=>{
+        setServerError("")
+      },1000);
+      return;
+    }
 
     setTimeout(() => {
       setIsLoading(false);
     }, 300);
-
+    
     setShowSuccessMessage(true);
     setTimeout(() => {
       setShowSuccessMessage(false);
       reset();
     }, 1000);
+  }
+  catch
+  {
+    setServerError("An error occurred. Please try again.")
+  }
   };
 
   return (
