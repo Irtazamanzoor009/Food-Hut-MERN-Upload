@@ -73,6 +73,7 @@ const SignUp = () => {
             {showSuccessMessage && (
               <div className="green msgs">User Signed Up Successfully</div>
             )}
+            {serverError && <div className="red msgs">{serverError}</div>}
             {errors.username && (
               <div className="red msgs">{errors.username.message}</div>
             )}
