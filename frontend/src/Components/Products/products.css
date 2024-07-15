@@ -149,6 +149,14 @@
   background-color: white;
 }
 
+.upper
+{
+  color: white;
+  width: 85%;
+  margin: 10px auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 .categorised
 {
   display: flex;
