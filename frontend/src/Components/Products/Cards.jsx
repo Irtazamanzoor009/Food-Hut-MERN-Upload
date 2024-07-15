@@ -19,10 +19,10 @@ const Cards = (props) => {
   const priceOptions = Object.keys(options);
 
   const [qty, setqty] = useState(1);
-  const [size, setsize] = useState(priceOptions[0]);
+  const [size, setsize] = useState(priceOptions[1]);
 
   useEffect(() => {
-    setsize(priceOptions[0]);
+    setsize(priceOptions[1]);
   }, [props.items.options]);
 
   const originalPrice = parseFloat(options[size]) || 0;
